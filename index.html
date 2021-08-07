@@ -39,32 +39,5 @@
   <footer style = "top: 60vh; position:relative; width:100;"  class="bg-dark text-light text-center py-3 my-3" >
     <p class="">@arjungupta</p>
  </footer >
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    // $(document).ready(function () {
-    init();
 
-    function init() {
-      var url = "https://api.covid19api.com/summary";
-      var data = "";
-      $.get(url, function (data) {
-    //  console.log(data.Global)
-
-        data = `
-            <td>${data.Global.TotalConfirmed}</td>
-            <td>${data.Global.TotalDeaths}</td>
-            <td>${data.Global.TotalRecovered}</td>
-            `;
-        $("#data").html(data);
-      });
-    }
-
-    function refreshData() {
-      clearData();
-      init();
-    }
-    function clearData() {
-      $("#data").empty();
-    }
-  </script>
 </html>
